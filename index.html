@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
 
-<head>
-	<title>Parcel Sandbox</title>
-	<meta charset="UTF-8" />
-</head>
+  <body>
+    <div id="app">
+      <input
+        type="text"
+        placeholder="Enter username"
+        data-username-input
+      />
+	    <input
+        type="text"
+        placeholder="Enter username lool"
+        data-username-input
+      />
+      <div>
+        <p>Username: <span data-username /></p>
+		    <p>Username: <span data-username /></p>
+        <button id="clear">Clear</button>
+      </div>
+    </div>
 
-<body>
-	<div id="app"></div>
-
-	<script src="src/index.js">
-	</script>
-</body>
-
+    <script src="src/index.js"></script>
+  </body>
 </html>

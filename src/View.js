@@ -12,6 +12,14 @@ export default class View {
     this.render();
   }
 
+  get el() {
+    return this._container;
+  }
+
+  set el(value) {
+    console.warn("Cannot set el");
+  }
+
   bind(key, observable) {
     const obs = this._observables[key];
     if (obs && obs === observable) {

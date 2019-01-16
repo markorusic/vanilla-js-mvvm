@@ -3,9 +3,15 @@ export default class Observable {
     return sub => sub !== null;
   }
 
-  constructor(value) {
+  constructor(
+    value,
+    options = {
+      notifyImmediately: true
+    }
+  ) {
     this.subscribers = [];
     this._value = value;
+    this.options = options;
   }
 
   get value() {
@@ -27,6 +33,10 @@ export default class Observable {
       `);
     }
     this.subscribers.push(subscriber);
+    if (this.options.notifyImmediately) {
+      this.notify();
+    }
+    return this;
   }
 
   unsubscribe(subscriber) {
